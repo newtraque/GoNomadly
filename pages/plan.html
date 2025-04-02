@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Your Trip - GoNomadly</title>
+  <meta name="description" content="Plan your perfect trip with GoNomadly's travel planning tools and resources.">
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              200: '#99f6e4',
+              300: '#5eead4',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              800: '#115e59',
+              900: '#134e4a',
+              950: '#042f2e',
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="flex min-h-screen flex-col">
+  <header class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <div class="container mx-auto flex h-16 items-center justify-between px-4">
+      <a href="/" class="flex items-center gap-2 font-bold text-xl">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-teal-500">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0-20" />
+          <path d="M2 12h20" />
+        </svg>
+        <span>GoNomadly</span>
+      </a>
+      <nav class="hidden md:flex gap-6">
+        <a href="/" class="text-sm font-medium hover:text-teal-500 transition-colors">
+          Home
+        </a>
+        <a href="destinations.html" class="text-sm font-medium hover:text-teal-500 transition-colors">
+          Destinations
+        </a>
+        <a href="about.html" class="text-sm font-medium hover:text-teal-500 transition-colors">
+          About
+        </a>
+        <a href="blog.html" class="text-sm font-medium hover:text-teal-500 transition-colors">
+          Blog
+        </a>
+        <a href="contact.html" class="text-sm font-medium hover:text-teal-500 transition-colors">
+          Contact
+        </a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <button class="hidden md:flex text-sm font-medium hover:text-teal-500 transition-colors">
+          Sign In
+        </button>
+        <button class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-md text-sm">
+          Sign Up
+        </button>
+        <button class="md:hidden border border-gray-200 rounded-md p-2">
+          <span class="sr-only">Toggle menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <main class="flex-1">
+    <section class="w-full py-12 md:py-24 lg:py-32 bg-teal-50">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col items-center justify-center space-y-4 text-center">
+          <div class="space-y-2">
+            <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl">Plan Your Perfect Trip</h1>
+            <p class="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Create a personalized itinerary tailored to your travel preferences and budget.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full py-12 md:py-24 lg:py-32">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="grid gap-10 lg:grid-cols-3">
+          <div class="lg:col-span-1">
+            <div class="sticky top-24 space-y-6">
+              <div class="rounded-lg border bg-white p-6">
+                <h2 class="text-xl font-bold mb-4">Trip Planner</h2>
+                <form class="space-y-4">
+                  <div>
+                    <label for="destination" class="block text-sm font-medium text-gray-700 mb-1">Where to?</label>
+                    <input type="text" id="destination" placeholder="City, country, or region" class="w-full px-3 py-2 border border-gray-300 rounded-md" />
+                  </div>
+                  
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <label for="start-date" class="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
+                      <input type="date" id="start-date" class="w-full px-3 py-2 border border-gray-300 rounded-md" />
+                    </div>
+                    <div>
+                      <label for="end-date" class="block text-sm font-medium text-gray-700 mb-1">End Date</label>
+                      <input type="date" id="end-date" class="w-full px-3 py-2 border border-gray-300 rounded-md" />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label for="travelers" class="block text-sm font-medium text-gray-700 mb-1">Travelers</label>
+                    <select id="travelers" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                      <option value="1">1 Traveler</option>
+                      <option value="2">2 Travelers</option>
+                      <option value="3">3 Travelers</option>
+                      <option value="4">4 Travelers</option>
+                      <option value="5+">5+ Travelers</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label for="budget" class="block text-sm font-medium text-gray-700 mb-1">Budget</label>
+                    <select id="budget" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                      <option value="budget">Budget</option>
+                      <option value="moderate">Moderate</option>
+                      <option value="luxury">Luxury</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Trip Type</label>
+                    <div class="grid grid-cols-2 gap-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="rounded border-gray-300" />
+                        <span class="text-sm">Beach</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="rounded border-gray-300" />
+                        <span class="text-sm">City</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="rounded border-gray-300" />
+                        <span class="text-sm">Adventure</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="rounded border-gray-300" />
+                        <span class="text-sm">Cultural</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="rounded border-gray-300" />
+                        <span class="text-sm">Food</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <button type="submit" class="w-full bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-md">
+                    Plan My Trip
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-2 space-y-8">
+            <div class="space-y-4">
+              <h2 class="text-2xl font-bold">How It Works</h2>
+              <div class="grid gap-6 md:grid-cols-3">
+                <div class="flex flex-col items-center text-center space-y-2">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-full bg-teal-100 text-teal-500">
+                    <span class="font-bold">1</span>
+                  </div>
+                  <h3 class="font-medium">Enter Your Preferences</h3>
+                  <p class="text-sm text-gray-500">Tell us where you want to go, when, and what type of experience you're looking for.</p>
+                </div>
+                
+                <div class="flex flex-col items-center text-center space-y-2">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-full bg-teal-100 text-teal-500">
+                    <span class="font-bold">2</span>
+                  </div>
+                  <h3 class="font-medium">Get Personalized Recommendations</h3>
+                  <p class="text-sm text-gray-500">Our AI generates a custom itinerary based on your preferences and budget.</p>
+                </div>
+                
+                <div class="flex flex-col items-center text-center space-y-2">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-full bg-teal-100 text-teal-500">
+                    <span class="font-bold">3</span>
+                  </div>
+                  <h3 class="font-medium">Book and Enjoy</h3>
+                  <p class="text-sm text-gray-500">Review your itinerary, make adjustments, and book your perfect trip.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                alt="Travel planning" 
+                class="w-full h-auto object-cover"
+              />
+            </div>
+            
+            <div class="space-y-4">
+              <h2 class="text-2xl font-bold">Popular Trip Ideas</h2>
+              <div class="grid gap-6 md:grid-cols-2">
+                <div class="group rounded-lg border overflow-hidden">
+                  <div class="relative h-48">
+                    <img 
+                      src="https://images.unsplash.com/photo-1499856871958-5b9357976b82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                      alt="European Adventure" 
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <div class="p-4">
+                    <h3 class="font-bold text-lg">European Adventure</h3>
+                    <p class="text-sm text-gray-500 mb-2">14 days across 5 countries</p>
+                    <button class="text-teal-500 hover:text-teal-600 text-sm font-medium">View Itinerary →</button>
+                  </div>
+                </div>
+                
+                <div class="group rounded-lg border overflow-hidden">
+                  <div class="relative h-48">
+                    <img 
+                      src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1075&q=80" 
+                      alt="Southeast Asia Explorer" 
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <div class="p-4">
+                    <h3 class="font-bold text-lg">Southeast Asia Explorer</h3>
+                    <p class="text-sm text-gray-500 mb-2">21 days of culture and beaches</p>
+                    <button class="text-teal-500 hover:text-teal-600 text-sm font-medium">View Itinerary →</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="w-full border-t bg-teal-50">
+    <div class="container mx-auto flex flex-col gap-6 py-12 px-4 md:px-6">
+      <div class="grid gap-8 lg:grid-cols-4">
+        <div class="space-y-4">
+          <a href="/" class="flex items-center gap-2 font-bold text-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-teal-500">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0-20" />
+              <path d="M2 12h20" />
+            </svg>
+            <span>GoNomadly</span>
+          </a>
+          <p class="text-sm text-gray-500">
+            Empowering travelers to explore the world with confidence and curiosity since 2023.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-medium text-base">Explore</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="destinations.html" class="text-gray-500 hover:text-teal-500">
+                Destinations
+              </a>
+            </li>
+            <li>
+              <a href="experiences.html" class="text-gray-500 hover:text-teal-500">
+                Experiences
+              </a>
+            </li>
+            <li>
+              <a href="travel-guides.html" class="text-gray-500 hover:text-teal-500">
+                Travel Guides
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-medium text-base">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="about.html" class="text-gray-500 hover:text-teal-500">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="contact.html" class="text-gray-500 hover:text-teal-500">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-medium text-base">Legal</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="terms.html" class="text-gray-500 hover:text-teal-500">
+                Terms of Service
+              </a>
+            </li>
+            <li>
+              <a href="privacy.html" class="text-gray-500 hover:text-teal-500">
+                Privacy Policy
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t flex flex-col gap-4 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-xs text-gray-500">
+          © <script>document.write(new Date().getFullYear())</script> GoNomadly. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
