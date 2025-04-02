@@ -1,0 +1,10 @@
+// Mobile menu toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const menuButton = document.querySelector(".md\\:hidden")
+  if (menuButton) {
+    menuButton.addEventListener("click", () => {
+      // Add mobile menu functionality here
+      alert("Mobile menu coming soon!")
+    })
+  }
+})
